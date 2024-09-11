@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación Calculadora von Neumann</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Simulación de la Calculadora von Neumann</h1>
+            <p class="subtitle">Explora cómo los datos fluyen a través de la arquitectura von Neumann.</p>
+        </header>
+
+        <!-- Contenedor de la visualización gráfica -->
+        <section class="diagram-container">
+            <!-- Estación Memoria -->
+            <div id="memory" class="station">
+                <img src="https://cdn-icons-png.flaticon.com/512/2219/2219225.png" alt="Icono de memoria" class="icon">
+                <h2>Memoria</h2>
+                <table>
+                    <tr><th>Dirección</th><th>Valor (Binario)</th></tr>
+                    <tr><td>0000</td><td id="mem0">0000</td></tr>
+                    <tr><td>0001</td><td id="mem1">0001</td></tr>
+                    <tr><td>0010</td><td id="mem2">1000</td></tr>
+                    <tr><td>0011</td><td id="mem3">0011</td></tr>
+                </table>
+            </div>
+
+            <!-- Estación Registros -->
+            <div id="registers" class="station">
+                <img src="https://image.pngaaa.com/230/5480230-middle.png" alt="Icono de registros" class="icon">
+                <h2>Registros</h2>
+                <p><strong>Registro A:</strong> <span id="regA">0000</span></p>
+                <p><strong>Registro B:</strong> <span id="regB">0000</span></p>
+                <p><strong>Registro C:</strong> <span id="regC">0000</span></p>
+                <p><strong>Acumulador:</strong> <span id="acumulador">0000</span></p>
+            </div>
+
+            <!-- Estación ALU -->
+            <div id="alu" class="station">
+                <img src="https://cdn.icon-icons.com/icons2/1369/PNG/512/-memory_90519.png" alt="Icono de ALU" class="icon">
+                <h2>ALU</h2>
+                <p id="aluMessage">ALU esperando...</p>
+                <!-- Detalles de lo que ocurre en la ALU -->
+                <div class="alu-details">
+                    <p><strong>Operación en curso:</strong> <span id="aluOperation">N/A</span></p>
+                    <p><strong>Valor A (Binario):</strong> <span id="aluA">N/A</span></p>
+                    <p><strong>Valor B (Binario):</strong> <span id="aluB">N/A</span></p>
+                    <p><strong>Resultado:</strong> <span id="aluResult">N/A</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Botones para avanzar o reiniciar el proceso -->
+        <div class="controls">
+            <button id="nextStepBtn">Siguiente paso</button>
+            <button id="resetBtn">Reiniciar</button>
+        </div>
+
+        <p id="mensajeExplicacion">Explicación del paso...</p>
+
+        <footer>
+            <p>Simulador de Arquitectura von Neumann</p>
+        </footer>
+
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>
